@@ -8,7 +8,7 @@
             IDATA = "${CYLC_WORKFLOW_SHARE_DIR}/idata"
     [[a]]
         # run "a.sh" (which gets output location from the CLI)
-      script = "a.sh --output=$IDATA"
+        script = "a.sh --output=$IDATA"
     [[b]]
         # run "b.sh" (whose I/O is configured by environment variables)
         script = "b.sh"
