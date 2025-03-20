@@ -75,7 +75,11 @@ $ cd cylc-src/one
 # validate, install, and play the workflow
 $ cylc vip --no-detach .
 ...
+```
 
+### Viewing the output
+
+```console
 # view the shared workspace for the run
 $ tree ~/cylc-run/one/runN/share
 /home/oliverh/cylc-run/one/runN/share
