@@ -1,17 +1,14 @@
 [scheduling]
     [[graph]]
-        R1 = "a => b"  # trigger a, then trigger b if a succeeds
+        R1 = "a => b"
 [runtime]
-    [[root]]  # (inherited by all tasks)
+    [[root]]
         [[[environment]]]
-            # Location of intermediate file used by tasks a and b.
             IDATA = "${CYLC_WORKFLOW_SHARE_DIR}/idata"
     [[a]]
-        # run "a.sh" (which gets output location from the CLI)
-        script = "a.sh --output=$IDATA"
+        script = "a.sh --output=$IDATA"    # run a.sh
     [[b]]
-        # run "b.sh" (whose I/O is configured by environment variables)
-        script = "b.sh"
+        script = "b.sh"    # run b.sh
         [[[environment]]]
             B_INPUT = "$IDATA"
             B_OUTPUT = "${CYLC_WORKFLOW_SHARE_DIR}/result"
